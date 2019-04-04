@@ -12,7 +12,7 @@
   <groupId>org.kie</groupId>
   <artifactId>kie-gwthelper-maven-plugin</artifactId>
   <packaging>maven-plugin</packaging>
-  <version>${version.org.kie.gwthelper.maven}</version>
+  <version>1.0</version>
   <name>KIE :: Gwt Helper Maven Plugin</name>
   <description>Plugin to allow hot reload/SDM on GWT sources outside the current maven project - i.e.. in an arbitraryy location on filesystem</description>
   <url>https://github.com/kiegroup/kie-gwthelper-maven-plugin</url>
@@ -44,7 +44,6 @@
   </prerequisites>
 
   <properties>
-    <version.org.kie.gwthelper.maven>1.0</version.org.kie.gwthelper.maven>
     <version.maven.required>3.0</version.maven.required>
     <version.maven.artifact>3.6.0</version.maven.artifact>
     <version.maven.source.plugin>3.0.1</version.maven.source.plugin>
