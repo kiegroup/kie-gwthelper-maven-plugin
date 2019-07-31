@@ -21,11 +21,20 @@ GWT modules are individuated if the directory contains a **src/main/resources/()
 Moreover, it requires a single parameter to define the folder to scan, so that these parameter may be included as **property** in private user settings,
 to allow different configuration on different machine.
 
-There are three configuration parameters:
+ Available parameters:
 
-1. rootDirectories (required): comma-separated list of absolute/relative paths of directory to scan
-2. includes (optional): comma-separated list of pattern to **include** the module
-3. excludes (optional): comma-separated list of pattern to **exclude** the module
+    excludes
+      Comma-separated pattern to match to exclude modules. Does not use regex,
+      but simple string
+
+    includes
+      Comma-separated list of patterns to match to include modules. Does not use
+      regex, but simple string
+
+    rootDirectories
+      Comma-separated list of absolute/relative paths of directory to scan.
+      Required: Yes
+
 
 
 Here's an example of a valid configuration:
@@ -49,19 +58,6 @@ Here's an example of a valid configuration:
           </executions>
     </plugin>
 
-  Available parameters:
-
-    excludes
-      Comma-separated pattern to match for excluding modules. Does not use
-      regex, but simple string
-
-    includes
-      Comma-separated pattern to match for including modules. Does not use
-      regex, but simple string
-
-    rootDirectories
-      Comma-separated additional source directories.
-      Required: Yes
 
 Inheritance goal
 ----------------

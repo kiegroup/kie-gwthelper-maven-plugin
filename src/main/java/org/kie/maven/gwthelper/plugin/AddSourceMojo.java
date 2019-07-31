@@ -42,20 +42,20 @@ public class AddSourceMojo  extends AbstractMojo {
     private final static String SRC_MAIN_RESOURCES = "/src/main/resources".replace("/", File.separator);
 
     /**
-     * Comma-separated additional source directories.
+     * Comma-separated list of absolute/relative paths of directory to scan.
      */
     @Parameter(required = true)
     private String rootDirectories;
 
     /**
-     * Comma-separated pattern to match for including modules.
+     * Comma-separated list of patterns to match to include modules.
      * Does not use regex, but simple string
      */
     @Parameter(required = false)
     private String includes;
 
     /**
-     * Comma-separated pattern to match for excluding modules.
+     * Comma-separated pattern to match to exclude modules.
      * Does not use regex, but simple string
      *
      */
