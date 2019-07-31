@@ -10,9 +10,9 @@
   <groupId>org.kie</groupId>
   <artifactId>kie-gwthelper-maven-plugin</artifactId>
   <packaging>maven-plugin</packaging>
-  <version>1.2</version>
+  <version>1.3</version>
   <name>KIE :: Gwt Helper Maven Plugin</name>
-  <description>Plugin that provides some utilities for GWT development, like hot reload/SDM on GWT sources outside the current maven project - i.e.. in an arbitrary location on filesystem, and GWT module hierarchy analyzer</description>
+  <description>Plugin to allow hot reload/SDM on GWT sources outside the current maven project - i.e.. in an arbitraryy location on filesystem</description>
   <url>https://github.com/kiegroup/kie-gwthelper-maven-plugin</url>
 
   <licenses>
@@ -48,7 +48,6 @@
     <version.maven.javadoc.plugin>3.0.1</version.maven.javadoc.plugin>
     <version.plexus.component.annotations>1.7.1</version.plexus.component.annotations>
     <version.plexus.utils>3.1.0</version.plexus.utils>
-    <version.maven.dependency.tree>3.0.1</version.maven.dependency.tree>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
@@ -90,10 +89,6 @@
     <dependency>
       <groupId>org.apache.maven</groupId>
       <artifactId>maven-plugin-api</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.maven.shared</groupId>
-      <artifactId>maven-dependency-tree</artifactId>
     </dependency>
     <dependency>
       <groupId>org.codehaus.plexus</groupId>
@@ -139,13 +134,22 @@
         <artifactId>maven-artifact</artifactId>
         <version>${version.maven.artifact}</version>
       </dependency>
-      <dependency>
-        <groupId>org.apache.maven.shared</groupId>
-        <artifactId>maven-dependency-tree</artifactId>
-        <version>${version.maven.dependency.tree}</version>
-      </dependency>
     </dependencies>
   </dependencyManagement>
+
+  <pluginRepositories>
+    <pluginRepository>
+      <releases>
+        <updatePolicy>never</updatePolicy>
+      </releases>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+      <id>jboss</id>
+      <name>JBoss Repository</name>
+      <url>https://repository.jboss.org/nexus/content/repositories/public/</url>
+    </pluginRepository>
+  </pluginRepositories>
 
   <build>
     <plugins>
@@ -155,14 +159,6 @@
         <configuration>
           <skipErrorNoDescriptorsFound>true</skipErrorNoDescriptorsFound>
         </configuration>
-        <executions>
-          <execution>
-            <id>generated-helpmojo</id>
-            <goals>
-              <goal>helpmojo</goal>
-            </goals>
-          </execution>
-        </executions>
       </plugin>
     </plugins>
   </build>

@@ -1,12 +1,7 @@
 KIE GWT Helper Maven Plugin
-===========================
+=======================
 
-Scope of this plugin is to implement functionalities that may be useful while doing GWT development inside a maven environment, and that are not covered by other GWT plugins.
-
-AddSource goal
---------------
-
-Scope of this goal is to include arbitrary directories (in whatever location of local filesystem) to the runtime sources of a GWT project,
+Scope of this plugin is to include arbitrary directories (in whatever location of local filesystem) to the runtime sources of a GWT project,
 so that GWT' Super Dev Mode will listen for changes also in those sources, eventually recompiling them when they change.
 
 The main difference with the maven-dependency addSources goal is that this plugin recursively scan a given directory to find
@@ -48,43 +43,4 @@ Here's an example of a valid configuration:
              </execution>
           </executions>
     </plugin>
-
-  Available parameters:
-
-    excludes
-      Comma-separated pattern to match for excluding modules. Does not use
-      regex, but simple string
-
-    includes
-      Comma-separated pattern to match for including modules. Does not use
-      regex, but simple string
-
-    rootDirectories
-      Comma-separated additional source directories.
-      Required: Yes
-
-Inheritance goal
-----------------
-
-Scope of this goal is to print out the "inheritance" tree of GWT module.
-
-For each "parent" GWT module, it will print out inherited ones with the artifacts that provides them, or it will raise a WARNING if no provider artifact is found.
-Analysis may be done recursively to see the whole inheritance tree, or may be reduced to only the first level.
-
-  Available parameters:
-
-    failOnWarning (Default: false)
-      Whether to fail the build if an inheritance warning is found.
-      User property: failOnWarning
-
-    fileName (Default: inheritance.xml)
-      Generated file name
-
-    fileOutput (Default: false)
-      Whether to write output to file
-      User property: fileOutput
-
-    verbose (Default: false)
-      Whether to have a verbose output
-      User property: verbose
 
