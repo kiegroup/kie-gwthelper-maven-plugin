@@ -33,7 +33,7 @@ import org.apache.maven.project.MavenProject;
 import org.codehaus.plexus.util.StringUtils;
 
 /**
- * Add arbitrary source directories to be watched by GWT compiler/hot reload.
+ * Add more source directories to the POM.
  */
 @Mojo(name = "add-source", defaultPhase = LifecyclePhase.GENERATE_SOURCES, threadSafe = true)
 public class AddSourceMojo  extends AbstractMojo {

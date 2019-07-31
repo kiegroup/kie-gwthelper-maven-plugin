@@ -1,12 +1,7 @@
 KIE GWT Helper Maven Plugin
-===========================
+=======================
 
-Scope of this plugin is to implement functionalities that may be useful while doing GWT development inside a maven environment, and that are not covered by other GWT plugins.
-
-AddSource goal
---------------
-
-Scope of this goal is to include arbitrary directories (in whatever location of local filesystem) to the runtime sources of a GWT project,
+Scope of this plugin is to include arbitrary directories (in whatever location of local filesystem) to the runtime sources of a GWT project,
 so that GWT' Super Dev Mode will listen for changes also in those sources, eventually recompiling them when they change.
 
 The main difference with the maven-dependency addSources goal is that this plugin recursively scan a given directory to find
@@ -58,7 +53,6 @@ Here's an example of a valid configuration:
           </executions>
     </plugin>
 
-
 Inheritance goal
 ----------------
 
@@ -83,4 +77,5 @@ Analysis may be done recursively to see the whole inheritance tree, or may be re
     verbose (Default: false)
       Whether to have a verbose output
       User property: verbose
+
 
