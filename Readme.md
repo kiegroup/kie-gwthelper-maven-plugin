@@ -16,11 +16,20 @@ GWT modules are individuated if the directory contains a **src/main/resources/()
 Moreover, it requires a single parameter to define the folder to scan, so that these parameter may be included as **property** in private user settings,
 to allow different configuration on different machine.
 
-There are three configuration parameters:
+ Available parameters:
 
-1. rootDirectories (required): comma-separated list of absolute/relative paths of directory to scan
-2. includes (optional): comma-separated list of pattern to **include** the module
-3. excludes (optional): comma-separated list of pattern to **exclude** the module
+    excludes
+      Comma-separated pattern to match to exclude modules. Does not use regex,
+      but simple string
+
+    includes
+      Comma-separated list of patterns to match to include modules. Does not use
+      regex, but simple string
+
+    rootDirectories
+      Comma-separated list of absolute/relative paths of directory to scan.
+      Required: Yes
+
 
 
 Here's an example of a valid configuration:
@@ -43,4 +52,30 @@ Here's an example of a valid configuration:
              </execution>
           </executions>
     </plugin>
+
+Inheritance goal
+----------------
+
+Scope of this goal is to print out the "inheritance" tree of GWT module.
+
+For each "parent" GWT module, it will print out inherited ones with the artifacts that provides them, or it will raise a WARNING if no provider artifact is found.
+Analysis may be done recursively to see the whole inheritance tree, or may be reduced to only the first level.
+
+  Available parameters:
+
+    failOnWarning (Default: false)
+      Whether to fail the build if an inheritance warning is found.
+      User property: failOnWarning
+
+    fileName (Default: inheritance.xml)
+      Generated file name
+
+    fileOutput (Default: false)
+      Whether to write output to file
+      User property: fileOutput
+
+    verbose (Default: false)
+      Whether to have a verbose output
+      User property: verbose
+
 
