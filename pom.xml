@@ -10,7 +10,7 @@
   <groupId>org.kie</groupId>
   <artifactId>kie-gwthelper-maven-plugin</artifactId>
   <packaging>maven-plugin</packaging>
-  <version>1.4-SNAPSHOT</version>
+  <version>1.3-SNAPSHOT</version>
   <name>KIE :: Gwt Helper Maven Plugin</name>
   <description>Plugin that provides some utilities for GWT development, like hot reload/SDM on GWT sources outside the current maven project - i.e.. in an arbitrary location on filesystem, and GWT module hierarchy analyzer</description>
   <url>https://github.com/kiegroup/kie-gwthelper-maven-plugin</url>
